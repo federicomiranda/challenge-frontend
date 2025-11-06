@@ -1,18 +1,6 @@
 import { useEffect, useState, useRef } from "react";
-
-interface Metric {
-  timestamp: string;
-  activeUsers: number;
-  newUsers: number;
-  revenue: number;
-  churnRate: number;
-  byRegion: {
-    US: number;
-    EU: number;
-    LATAM: number;
-    APAC: number;
-  };
-}
+import type { Metric } from "@/types/metrics";
+import { API_URL } from "@/constants/config";
 
 function App() {
   const [metrics, setMetrics] = useState<Metric[] | null>(null);
@@ -20,7 +8,7 @@ function App() {
 
   useEffect(() => {
     const fetchMetrics = async () => {
-      const res = await fetch("http://localhost:4000/metrics");
+      const res = await fetch(`${API_URL}/metrics`);
       const data = await res.json();
       if (!hasFetched.current) {
         console.log("Datos recibidos:", data);
