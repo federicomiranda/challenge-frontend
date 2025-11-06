@@ -1,7 +1,21 @@
 import { useEffect, useState, useRef } from "react";
 
+interface Metric {
+  timestamp: string;
+  activeUsers: number;
+  newUsers: number;
+  revenue: number;
+  churnRate: number;
+  byRegion: {
+    US: number;
+    EU: number;
+    LATAM: number;
+    APAC: number;
+  };
+}
+
 function App() {
-  const [metrics, setMetrics] = useState(null);
+  const [metrics, setMetrics] = useState<Metric[] | null>(null);
   const hasFetched = useRef(false);
 
   useEffect(() => {
