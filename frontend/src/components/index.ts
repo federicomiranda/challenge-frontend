@@ -10,3 +10,4 @@ export { MetricsChart } from './dashboard/MetricsChart';
 export { RegionalBreakdown } from './dashboard/RegionalBreakdown';
 export { OfflineBanner } from './dashboard/OfflineBanner';
 export { DashboardHeader } from './dashboard/DashboardHeader';
+export { DashboardLayout } from './dashboard/DashboardLayout';
