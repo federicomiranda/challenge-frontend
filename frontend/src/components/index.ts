@@ -6,7 +6,9 @@ export { LoadingSpinner } from './common/LoadingSpinner';
 
 // Dashboard
 export { KPICard } from './dashboard/KPICard';
-export { MetricsChart } from './dashboard/MetricsChart';
+export { UsersChart } from './dashboard/UsersChart';
+export { RevenueChart } from './dashboard/RevenueChart';
+export { ChurnRateChart } from './dashboard/ChurnRateChart';
 export { RegionalBreakdown } from './dashboard/RegionalBreakdown';
 export { OfflineBanner } from './dashboard/OfflineBanner';
 export { DashboardHeader } from './dashboard/DashboardHeader';

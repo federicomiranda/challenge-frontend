@@ -5,7 +5,9 @@ import {
   OfflineBanner,
   DashboardHeader,
   KPICard,
-  MetricsChart,
+  UsersChart,
+  RevenueChart,
+  ChurnRateChart,
   RegionalBreakdown,
   Alert,
 } from '@/components';
@@ -66,9 +68,15 @@ export function DashboardLayout() {
         )}
 
         {timeSeries.length > 0 && (
-          <div className="mb-6">
-            <MetricsChart data={timeSeries} />
-          </div>
+          <>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+              <UsersChart data={timeSeries} />
+              <RevenueChart data={timeSeries} />
+            </div>
+            <div className="mb-6">
+              <ChurnRateChart data={timeSeries} />
+            </div>
+          </>
         )}
 
         {regionalData.length > 0 && (

@@ -9,20 +9,20 @@ import {
   Legend,
   ResponsiveContainer,
 } from 'recharts';
-import { formatTimestamp, formatCurrency, formatPercentage } from '@/utils/formatters';
+import { formatTimestamp } from '@/utils/formatters';
 import type { Metric } from '@/types/metrics';
 
-interface MetricsChartProps {
+interface UsersChartProps {
   data: Metric[];
 }
 
-export function MetricsChart({ data }: MetricsChartProps) {
+export function UsersChart({ data }: UsersChartProps) {
   return (
-    <Card className="col-span-full">
+    <Card>
       <h3 className="text-lg font-semibold text-gray-900 mb-4">
-        Evolución de Métricas en Tiempo Real
+        Usuarios Activos y Nuevos
       </h3>
-      <ResponsiveContainer width="100%" height={400}>
+      <ResponsiveContainer width="100%" height={300}>
         <LineChart data={data}>
           <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
           <XAxis
@@ -31,7 +31,10 @@ export function MetricsChart({ data }: MetricsChartProps) {
             stroke="#6b7280"
             style={{ fontSize: '12px' }}
           />
-          <YAxis stroke="#6b7280" style={{ fontSize: '12px' }} />
+          <YAxis
+            stroke="#6b7280"
+            style={{ fontSize: '12px' }}
+          />
           <Tooltip
             contentStyle={{
               backgroundColor: '#ffffff',
@@ -39,42 +42,22 @@ export function MetricsChart({ data }: MetricsChartProps) {
               borderRadius: '0.5rem',
             }}
             labelFormatter={(label) => `Tiempo: ${formatTimestamp(label as string)}`}
-            formatter={(value: number, name: string) => {
-              if (name === 'revenue') return formatCurrency(value);
-              if (name === 'churnRate') return formatPercentage(value);
-              return value.toLocaleString();
-            }}
+            formatter={(value: number) => value.toLocaleString()}
           />
           <Legend />
           <Line
             type="monotone"
             dataKey="activeUsers"
             stroke="#3b82f6"
-            strokeWidth={2}
+            strokeWidth={3}
             dot={false}
             name="Active Users"
           />
           <Line
             type="monotone"
-            dataKey="revenue"
-            stroke="#10b981"
-            strokeWidth={2}
-            dot={false}
-            name="Revenue"
-          />
-          <Line
-            type="monotone"
-            dataKey="churnRate"
-            stroke="#ef4444"
-            strokeWidth={2}
-            dot={false}
-            name="Churn Rate"
-          />
-          <Line
-            type="monotone"
             dataKey="newUsers"
             stroke="#f59e0b"
-            strokeWidth={2}
+            strokeWidth={3}
             dot={false}
             name="New Users"
           />
