@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import { memo, type ReactNode } from 'react';
 
 interface CardProps {
   children: ReactNode;
@@ -6,7 +6,7 @@ interface CardProps {
   alert?: boolean;
 }
 
-export function Card({ children, className = '', alert = false }: CardProps) {
+export const Card = memo(function Card({ children, className = '', alert = false }: CardProps) {
   const alertClasses = alert
     ? 'border-red-500 border-2'
     : 'border-gray-200 border';
@@ -18,4 +18,4 @@ export function Card({ children, className = '', alert = false }: CardProps) {
       {children}
     </div>
   );
-}
+});

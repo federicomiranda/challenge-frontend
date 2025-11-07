@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { Card } from '@/components';
 import { formatNumber } from '@/utils/formatters';
 import type { RegionalBreakdown as RegionalData } from '@/types/metrics';
@@ -6,7 +7,7 @@ interface RegionalBreakdownProps {
   data: RegionalData[];
 }
 
-export function RegionalBreakdown({ data }: RegionalBreakdownProps) {
+export const RegionalBreakdown = memo(function RegionalBreakdown({ data }: RegionalBreakdownProps) {
   return (
     <Card>
       <h3 className="text-lg font-semibold text-gray-900 mb-4">
@@ -24,4 +25,4 @@ export function RegionalBreakdown({ data }: RegionalBreakdownProps) {
       </div>
     </Card>
   );
-}
+});

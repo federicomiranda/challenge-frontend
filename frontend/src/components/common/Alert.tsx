@@ -1,11 +1,11 @@
-import type { ReactNode } from 'react';
+import { memo, type ReactNode } from 'react';
 
 interface AlertProps {
   children: ReactNode;
   variant?: 'warning' | 'error' | 'info';
 }
 
-export function Alert({ children, variant = 'info' }: AlertProps) {
+export const Alert = memo(function Alert({ children, variant = 'info' }: AlertProps) {
   const variants = {
     warning: 'bg-yellow-50 border-yellow-400 text-yellow-800',
     error: 'bg-red-50 border-red-400 text-red-800',
@@ -20,4 +20,4 @@ export function Alert({ children, variant = 'info' }: AlertProps) {
       <p className="font-medium">{children}</p>
     </div>
   );
-}
+});

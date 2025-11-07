@@ -3,6 +3,7 @@ export { Card } from './common/Card';
 export { Badge } from './common/Badge';
 export { Alert } from './common/Alert';
 export { LoadingSpinner } from './common/LoadingSpinner';
+export { ErrorBoundary } from './common/ErrorBoundary';
 
 // Dashboard
 export { KPICard } from './dashboard/KPICard';
