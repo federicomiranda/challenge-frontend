@@ -4,6 +4,8 @@
 
 Dashboard de métricas en tiempo real construido con React 18, TypeScript, y arquitectura escalable. Polling automático cada 5 segundos, visualización multi-escala, y manejo de errores.
 
+**🔗 [Ver demo en vivo](https://challenge-frontend-kappa.vercel.app)**
+
 
 ## 🚀 Quick Start
 
