@@ -1,4 +1,4 @@
-# Real-Time Analytics Dashboard
+# Frontend Challenge - Dashboard
 
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue) ![React](https://img.shields.io/badge/React-18.3-blue) ![Tests](https://img.shields.io/badge/tests-35%20passing-green) ![Build](https://img.shields.io/badge/build-passing-green)
 
@@ -26,9 +26,9 @@ npm run build
 
 | Tecnología | Por qué
 |------------|--------|
-| **TanStack Query v5** | Polling automático, cache inteligente, offline support, retry logic |
-| **Recharts 2.15** | Componentes React nativos, composable, TypeScript first |
-| **date-fns 3** | Tree-shakeable, inmutable, moderno |
+| **TanStack Query** | Polling automático, cache inteligente, offline support, retry logic |
+| **Recharts** | Componentes React nativos, composable, TypeScript first |
+| **date-fns** | Tree-shakeable, inmutable, moderno |
 | **Vitest** | Integración nativa Vite, más rápido |
 | **Tailwind CSS** | Utility-first, purge en build, DX |
 
@@ -62,15 +62,13 @@ npm run build
 **2. Atomic Design Minimalista**
 - Solo componentes reutilizados 2 veces o más
 
-**3. 3 Gráficos Separados por Escala**
+**3. Gráficos Separados por Escala**
 ```
 [Users Chart]    [Revenue Chart]
 [       Churn Rate Chart       ]
 ```
 
 ## 🧪 Testing Strategy
-
-**Enfoque: Pragmático, no exhaustivo**
 
 ### Qué Testeamos (35 tests)
 
@@ -163,7 +161,6 @@ Components (KPICard, Charts)
 - ✅ `aria-label` en KPICards
 - ✅ `role="region"` en métricas
 - ✅ `role="alert"` en banners
-- ✅ Semantic HTML (h1, h2, h3, section)
 
 ## 🤔 Preguntas para Discutir
 
